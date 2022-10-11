@@ -45,9 +45,7 @@ public class TimerActivity extends AppCompatActivity {
 
             @Override
             public void onTick(long l) {
-
                 runOnUiThread(() -> {
- 
                     String time = String.format(Locale.getDefault(),"%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(l),
                             TimeUnit.MILLISECONDS.toMinutes(l) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(l)),
                             TimeUnit.MILLISECONDS.toSeconds(l) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(l)));
@@ -62,6 +60,7 @@ public class TimerActivity extends AppCompatActivity {
             public void onFinish() {
                 ringtone.play();
             }
+
         };
 
         timer.start();
