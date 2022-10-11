@@ -19,7 +19,7 @@ public class TimerActivity extends AppCompatActivity {
     TextView hourTV, minTV, secTV;
     int duration;
     Button cancel, pause;
-    boolean state = false;
+    boolean state = true;
     Ringtone ringtone;
 
     @Override

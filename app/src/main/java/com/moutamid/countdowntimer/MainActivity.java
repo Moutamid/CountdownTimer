@@ -47,11 +47,15 @@ public class MainActivity extends AppCompatActivity {
             hour = hourPicker.getValue();
             min = minPicker.getValue();
             sec = secPicker.getValue();
-            Intent i = new Intent(MainActivity.this, TimerActivity.class);
-            i.putExtra("hour", String.valueOf(hour));
-            i.putExtra("min", String.valueOf(min));
-            i.putExtra("sec", String.valueOf(sec));
-            startActivity(i);
+            if (sec == 0){
+                Toast.makeText(this, "Please Set Time", Toast.LENGTH_SHORT).show();
+            } else {
+                Intent i = new Intent(MainActivity.this, TimerActivity.class);
+                i.putExtra("hour", String.valueOf(hour));
+                i.putExtra("min", String.valueOf(min));
+                i.putExtra("sec", String.valueOf(sec));
+                startActivity(i);
+            }
         });
 
         oneH.setOnClickListener(v -> {
