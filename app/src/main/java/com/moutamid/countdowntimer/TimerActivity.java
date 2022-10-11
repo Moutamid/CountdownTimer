@@ -83,9 +83,10 @@ public class TimerActivity extends AppCompatActivity {
         });
 
         cancel.setOnClickListener(v -> {
+            ringtone.stop();
+            timer.cancel();
             startActivity(new Intent(TimerActivity.this, MainActivity.class));
             finish();
-            ringtone.stop();
         });
     }
 }
