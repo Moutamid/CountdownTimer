@@ -195,7 +195,8 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:text="Privacy Policy"
-            android:textSize="18sp" />
+            android:backgroundTint="@color/black"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/donate"
@@ -204,8 +205,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:text="Donate"
-            android:textSize="18sp" />
+            android:text="Timer"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
