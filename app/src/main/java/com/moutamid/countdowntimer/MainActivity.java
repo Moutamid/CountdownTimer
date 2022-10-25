@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     NumberPicker hourPicker, minPicker, secPicker;
     int hour, min, sec;
-    Button start;
+    Button start, donate, privacy;
     TextView oneH, tenM, tenS;
 
     @Override
@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         minPicker = findViewById(R.id.numberMin);
         secPicker = findViewById(R.id.numberSec);
         start = findViewById(R.id.startTimer);
+        donate = findViewById(R.id.donate);
+        privacy = findViewById(R.id.privacy);
         oneH = findViewById(R.id.oneHour);
         tenM = findViewById(R.id.tenMin);
         tenS = findViewById(R.id.tenSec);
@@ -43,11 +45,15 @@ public class MainActivity extends AppCompatActivity {
 
         secPicker.setOnValueChangedListener((numberPicker, i, i1) -> sec = numberPicker.getValue());
 
+        donate.setOnClickListener(v -> {
+            startActivity(new Intent(this, DonateActivity.class));
+        });
+
         start.setOnClickListener(v -> {
             hour = hourPicker.getValue();
             min = minPicker.getValue();
             sec = secPicker.getValue();
-            if (sec == 0){
+            if (sec == 0 && min == 0 && hour == 0){
                 Toast.makeText(this, "Please Set Time", Toast.LENGTH_SHORT).show();
             } else {
                 Intent i = new Intent(MainActivity.this, TimerActivity.class);
