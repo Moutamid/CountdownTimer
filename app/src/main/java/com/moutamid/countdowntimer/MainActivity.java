@@ -3,6 +3,7 @@ package com.moutamid.countdowntimer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.NumberPicker;
@@ -47,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
 
         donate.setOnClickListener(v -> {
             startActivity(new Intent(this, DonateActivity.class));
+        });
+
+        privacy.setOnClickListener(v -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/document/d/e/2PACX-1vQfYe8QaqlaU07hw_Ib6e5MSHo22t274-Uhb1Ie8E_CdRJhkFfoK-s1YdNYMc-lX7NSWv1EHfde403f/pub"));
+            startActivity(browserIntent);
         });
 
         start.setOnClickListener(v -> {
